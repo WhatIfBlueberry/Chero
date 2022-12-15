@@ -1,0 +1,69 @@
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.csproj.AssemblyReference.cache
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.AssemblyInfoInputs.cache
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.AssemblyInfo.cs
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.csproj.CoreCompileInputs.cache
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.exe
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.deps.json
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.runtimeconfig.json
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.runtimeconfig.dev.json
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.dll
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.pdb
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotController.dll
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotController.pdb
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotController.xml
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.csproj.CopyComplete
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.dll
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.pdb
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\bachelorarbeit-bergmaier-nikola\Software RobotController.dll\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.genruntimeconfig.cache
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.exe
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.deps.json
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.runtimeconfig.json
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.runtimeconfig.dev.json
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.dll
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.pdb
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotController.dll
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotController.xml
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.csproj.AssemblyReference.cache
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.AssemblyInfoInputs.cache
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.AssemblyInfo.cs
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.csproj.CoreCompileInputs.cache
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.csproj.CopyComplete
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.dll
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.pdb
+C:\Users\Dylan\OneDrive\Desktop\RobotSimulationAndNewDLLVersions\RobotSimulationAndNewDLLVersions\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.genruntimeconfig.cache
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.exe
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.deps.json
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.runtimeconfig.json
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.runtimeconfig.dev.json
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.dll
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.pdb
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotController.dll
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotController.xml
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.csproj.AssemblyReference.cache
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.AssemblyInfoInputs.cache
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.AssemblyInfo.cs
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.csproj.CoreCompileInputs.cache
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.csproj.CopyComplete
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.dll
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.pdb
+C:\Users\Dylan\OneDrive\Desktop\9_Board_Game\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.genruntimeconfig.cache
+C:\Repos\chero\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.exe
+C:\Repos\chero\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.deps.json
+C:\Repos\chero\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.runtimeconfig.json
+C:\Repos\chero\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.runtimeconfig.dev.json
+C:\Repos\chero\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.dll
+C:\Repos\chero\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotSimulation.pdb
+C:\Repos\chero\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotController.dll
+C:\Repos\chero\RobotSimulation\RobotSimulation\bin\Debug\netcoreapp3.1\RobotController.xml
+C:\Repos\chero\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.csproj.AssemblyReference.cache
+C:\Repos\chero\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\chero\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.AssemblyInfoInputs.cache
+C:\Repos\chero\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.AssemblyInfo.cs
+C:\Repos\chero\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.csproj.CoreCompileInputs.cache
+C:\Repos\chero\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.csproj.CopyComplete
+C:\Repos\chero\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.dll
+C:\Repos\chero\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.pdb
+C:\Repos\chero\RobotSimulation\RobotSimulation\obj\Debug\netcoreapp3.1\RobotSimulation.genruntimeconfig.cache

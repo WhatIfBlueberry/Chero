@@ -1,0 +1,386 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RobotController</name>
+    </assembly>
+    <members>
+        <member name="T:RobotController.CartSpace">
+            <summary>Represents a rectangle in the cartesian space for the robot.</summary>
+        </member>
+        <member name="P:RobotController.CartSpace.Origin">
+            <summary>The origin frame to which the cartesian coordinates refer.</summary>
+        </member>
+        <member name="P:RobotController.CartSpace.Min">
+            <summary>The coordinates of the minimum position.</summary>
+        </member>
+        <member name="P:RobotController.CartSpace.Max">
+            <summary>The coordinates of the maximum position.</summary>
+        </member>
+        <member name="M:RobotController.CartSpace.#ctor(RobotController.RobotFrame,System.ValueTuple{System.Single,System.Single,System.Single},System.ValueTuple{System.Single,System.Single,System.Single})">
+            <summary>Initializes a new instance of the <c>CartSpace</c> class.</summary>
+            <param name="origin">The origin frame to which the cartesian coordinates refer.</param>
+            <param name="min">The coordinates of the minimum position.</param>
+            <param name="max">The coordinates of the maximum position.</param>
+            <exception cref="T:System.ArgumentException">A minimum value is greater than a maximum value.</exception>
+        </member>
+        <member name="M:RobotController.CartSpace.#ctor(System.ValueTuple{System.Single,System.Single,System.Single},System.ValueTuple{System.Single,System.Single,System.Single})">
+            <summary>Initializes a new instance of the <c>CartSpace</c> class with the world coordinate system as origin frame.</summary>
+            <param name="min">The coordinates of the minimum position.</param>
+            <param name="max">The coordinates of the maximum position.</param>
+            <exception cref="T:System.ArgumentException">A minimum value is greater than a maximum value.</exception>
+        </member>
+        <member name="T:RobotController.AxisSpace">
+            <summary>Represents axis space for the robot.</summary>
+        </member>
+        <member name="P:RobotController.AxisSpace.Min">
+            <summary>The minimum angle values for the different axes in degree.</summary>
+        </member>
+        <member name="P:RobotController.AxisSpace.Max">
+            <summary>The maximum angle values for the different axes in degree.</summary>
+        </member>
+        <member name="M:RobotController.AxisSpace.#ctor(System.ValueTuple{System.Single,System.Single,System.Single,System.Single,System.Single,System.Single},System.ValueTuple{System.Single,System.Single,System.Single,System.Single,System.Single,System.Single})">
+            <summary>Initializes a new instance of the <c>AxisSpace</c> class.</summary>
+            <param name="min">The minimum angle values for the different axes.</param>
+            <param name="max">The maximum angle values for the different axes.</param>
+            <exception cref="T:System.ArgumentException">A minimum value is greater than a maximum value.</exception>
+        </member>
+        <member name="T:RobotController.RobotAxisPosition">
+            <summary>Represents the axis values of a robot position.</summary>
+        </member>
+        <member name="P:RobotController.RobotAxisPosition.A1">
+            <summary>Value of Axis 1 in degree.</summary>
+        </member>
+        <member name="P:RobotController.RobotAxisPosition.A2">
+            <summary>Value of Axis 2 in degree.</summary>
+        </member>
+        <member name="P:RobotController.RobotAxisPosition.A3">
+            <summary>Value of Axis 3 in degree.</summary>
+        </member>
+        <member name="P:RobotController.RobotAxisPosition.A4">
+            <summary>Value of Axis 4 in degree.</summary>
+        </member>
+        <member name="P:RobotController.RobotAxisPosition.A5">
+            <summary>Value of Axis 5 in degree.</summary>
+        </member>
+        <member name="P:RobotController.RobotAxisPosition.A6">
+            <summary>Value of Axis 6 in degree.</summary>
+        </member>
+        <member name="M:RobotController.RobotAxisPosition.#ctor">
+            <summary>Initializes a new instance of the <c>RobotAxisPosition</c> class and sets the axis values to 0.</summary>
+        </member>
+        <member name="M:RobotController.RobotAxisPosition.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>Initializes a new instance of the <c>RobotAxisPosition</c> class.</summary>
+            <param name="A1">The value of Axis 1 in degree.</param>
+            <param name="A2">The value of Axis 2 in degree.</param>
+            <param name="A3">The value of Axis 3 in degree.</param>
+            <param name="A4">The value of Axis 4 in degree.</param>
+            <param name="A5">The value of Axis 5 in degree.</param>
+            <param name="A6">The value of Axis 6 in degree.</param>
+        </member>
+        <member name="M:RobotController.RobotAxisPosition.ToString">
+            <summary>Returns a string that represents the current object as XML.</summary>
+        </member>
+        <member name="T:RobotController.RobotControl">
+            <summary>Represents a class used to control a robot with simple commands.</summary>
+        </member>
+        <member name="P:RobotController.RobotControl.Position">
+            <summary>The current robot position, including axis and cartesian values plus the status of the gripper.</summary>
+        </member>
+        <member name="P:RobotController.RobotControl.AxisWorkspace">
+            <summary>The axisspecific workspace of the robot.</summary>
+        </member>
+        <member name="P:RobotController.RobotControl.CartWorkspace">
+            <summary>The cartesian workspace of the robot.</summary>
+        </member>
+        <member name="P:RobotController.RobotControl.Base_Data">
+            <summary>The array with the predefined base frames.</summary>
+        </member>
+        <member name="P:RobotController.RobotControl.Tool_Data">
+            <summary>The array with the predefined tool frames.</summary>
+        </member>
+        <member name="P:RobotController.RobotControl.ForbiddenAxisSpaces">
+            <summary>The axisspecific workspaces that are forbidden for the robot.</summary>
+        </member>
+        <member name="P:RobotController.RobotControl.ForbiddenCartSpaces">
+            <summary>The cartesian workspaces that are forbidden for the robot.</summary>
+        </member>
+        <member name="P:RobotController.RobotControl.Base">
+            <summary>The current base frame.</summary>
+        </member>
+        <member name="P:RobotController.RobotControl.Tool">
+            <summary>The current tool frame.</summary>
+        </member>
+        <member name="M:RobotController.RobotControl.#ctor(System.Boolean)">
+            <summary>Initializes a new instance of the <c>RobotControl</c> class using the predefined IP-configuration.</summary>
+            <param name="detailedLogging">Deatiled logging messages written on console.</param>
+        </member>
+        <member name="M:RobotController.RobotControl.#ctor(System.String,System.UInt16,System.Boolean)">
+            <summary>Initializes a new instance of the <c>RobotControl</c> class.</summary>
+            <param name="ipAddress">The IP-adress of the robot.</param>
+            <param name="port">The port of the robot.</param>
+            <param name="detailedLogging">Deatiled logging messages written on console.</param>
+        </member>
+        <member name="M:RobotController.RobotControl.StartConnection">
+            <summary>Starts the TCP/IP-connection to the robot.</summary>
+        </member>
+        <member name="M:RobotController.RobotControl.CloseConnection">
+            <summary>Closes the TCP/IP-connection to the robot.</summary>
+        </member>
+        <member name="M:RobotController.RobotControl.MoveToHome">
+            <summary>Moves the robot to the HOME position.</summary>
+            <returns>The current position of the robot.</returns>
+            <exception cref="T:RobotController.RobotCommunicationException">An error occurred during the communication with the robot.</exception>
+            <exception cref="T:System.TimeoutException">The robot required too much time sending back a response.</exception>
+            <exception cref="T:RobotController.RobotExecutionException">An error occured during the execution of the command at the robot.</exception>
+        </member>
+        <member name="M:RobotController.RobotControl.OpenGripper">
+            <summary>Opens the gripper of the robot.</summary>
+            <returns>The current position of the robot.</returns>
+            <exception cref="T:RobotController.RobotCommunicationException">An error occurred during the communication with the robot.</exception>
+            <exception cref="T:System.TimeoutException">The robot required too much time sending back a response.</exception>
+            <exception cref="T:RobotController.RobotExecutionException">An error occured during the execution of the command at the robot.</exception>
+        </member>
+        <member name="M:RobotController.RobotControl.CloseGripper">
+            <summary>Closes the gripper of the robot.</summary>
+            <returns>The current position of the robot.</returns>
+            <exception cref="T:RobotController.RobotCommunicationException">An error occurred during the communication with the robot.</exception>
+            <exception cref="T:System.TimeoutException">The robot required too much time sending back a response.</exception>
+            <exception cref="T:RobotController.RobotExecutionException">An error occured during the execution of the command at the robot.</exception>
+        </member>
+        <member name="M:RobotController.RobotControl.MoveAxesToPosition(RobotController.RobotAxisPosition,System.Boolean)">
+            <summary>Moves the robot per PTP-motion.</summary>
+            <param name="axisPosition">The axis values of the target position.</param>
+            <param name="relativeMotion">The axis values are given relative to the current axis values.</param>
+            <returns>The current position of the robot.</returns>
+            <exception cref="T:System.ArgumentNullException">The axis position is null.</exception>
+            <exception cref="T:RobotController.InvalidMovementException">The robot can't reach the target position.</exception>
+            <exception cref="T:RobotController.RobotCommunicationException">An error occurred during the communication with the robot.</exception>
+            <exception cref="T:System.TimeoutException">The robot required too much time sending back a response.</exception>
+            <exception cref="T:RobotController.RobotExecutionException">An error occured during the execution of the command at the robot.</exception>
+        </member>
+        <member name="M:RobotController.RobotControl.MoveTCPToPosition(RobotController.RobotCartPosition,RobotController.RobotCartMoveType,System.Boolean)">
+            <summary>Moves the robot.</summary>
+            <param name="cartPosition">The cartesian values of the target position.</param>
+            <param name="relativeMotion">The cartesian values are given relative to the current cartesian values.</param>
+            <param name="moveType">The type of the motion.</param>
+            <returns>The current position of the robot.</returns>
+            <exception cref="T:System.ArgumentNullException">The cartesian position is null.</exception>
+            <exception cref="T:RobotController.InvalidMovementException">The robot can't reach the target position.</exception>
+            <exception cref="T:RobotController.RobotCommunicationException">An error occurred during the communication with the robot.</exception>
+            <exception cref="T:System.TimeoutException">The robot required too much time sending back a response.</exception>
+            <exception cref="T:RobotController.RobotExecutionException">An error occured during the execution of the command at the robot.</exception>
+        </member>
+        <member name="M:RobotController.RobotControl.RotateTable(System.Single,System.Boolean)">
+            <summary>Rotates the table to a given position.</summary>
+            <param name="angle">The angle of the table position in degree.</param>
+            <param name="relativeMotion">The angle value is given relative to the current table angle.</param>
+            <returns>The current position of the robot.</returns>
+            <exception cref="T:RobotController.RobotCommunicationException">An error occurred during the communication with the robot.</exception>
+            <exception cref="T:System.TimeoutException">The robot required too much time sending back a response.</exception>
+            <exception cref="T:RobotController.RobotExecutionException">An error occured during the execution of the command at the robot.</exception>
+        </member>
+        <member name="M:RobotController.RobotControl.AddForbiddenSpace(System.String,RobotController.CartSpace)">
+            <summary>Adds a cartesian space which is forbidden for the robot.</summary>
+            <param name="name">The name of the forbidden cartesian space.</param>
+            <param name="space">The forbidden cartesian space.</param>
+            <returns>True if the cartesian space was succesfully added or false if a cartesian space with this name already exists.</returns>
+            <exception cref="T:System.ArgumentNullException">The name or the cartesian space is null.</exception>
+        </member>
+        <member name="M:RobotController.RobotControl.AddForbiddenSpace(System.String,RobotController.AxisSpace)">
+            <summary>Adds a axis space which is forbidden for the robot.</summary>
+            <param name="name">The name of the forbidden axis space.</param>
+            <param name="space">The forbidden axis space.</param>
+            <returns>True if the axis space was succesfully added or false if a axis space with this name already exists.</returns>
+            <exception cref="T:System.ArgumentNullException">The name or the axis space is null.</exception>
+        </member>
+        <member name="M:RobotController.RobotControl.RemoveForbiddenSpace(System.String)">
+            <summary>Removes all forbidden spaces with the name.</summary>
+            <param name="name">The name of the forbidden space to remove.</param>
+            <returns>True if a space with this name was found (axis or cartesian) or false if no space with this name exists.</returns>
+        </member>
+        <member name="M:RobotController.RobotControl.SetBase(RobotController.RobotFrame)">
+            <summary>Sets a new base frame for the robot.</summary>
+            <param name="newBase">The new base frame.</param>
+            <returns>The current position of the robot.</returns>
+            <exception cref="T:System.ArgumentNullException">The base frame is null.</exception>
+            <exception cref="T:RobotController.RobotCommunicationException">An error occurred during the communication with the robot.</exception>
+            <exception cref="T:System.TimeoutException">The robot required too much time sending back a response.</exception>
+            <exception cref="T:RobotController.RobotExecutionException">An error occured during the execution of the command at the robot.</exception>
+        </member>
+        <member name="M:RobotController.RobotControl.SetTool(RobotController.RobotFrame)">
+            <summary>Sets a new tool frame for the robot.</summary>
+            <param name="newTool">The new tool frame.</param>
+            <returns>The current position of the robot.</returns>
+            <exception cref="T:System.ArgumentNullException">The tool frame is null.</exception>
+            <exception cref="T:RobotController.RobotCommunicationException">An error occurred during the communication with the robot.</exception>
+            <exception cref="T:System.TimeoutException">The robot required too much time sending back a response.</exception>
+            <exception cref="T:RobotController.RobotExecutionException">An error occured during the execution of the command at the robot.</exception>
+        </member>
+        <member name="M:RobotController.RobotControl.SetBase(System.Int32)">
+            <summary>Sets a new base frame for the robot.</summary>
+            <param name="newBaseIndex">The index of BASE_DATA[] for the new base frame.</param>
+            <returns>The current position of the robot.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The base index is out of range for BASE_DATA[].</exception>
+            <exception cref="T:RobotController.RobotCommunicationException">An error occurred during the communication with the robot.</exception>
+            <exception cref="T:System.TimeoutException">The robot required too much time sending back a response.</exception>
+            <exception cref="T:RobotController.RobotExecutionException">An error occured during the execution of the command at the robot.</exception>
+        </member>
+        <member name="M:RobotController.RobotControl.SetTool(System.Int32)">
+            <summary>Sets a new tool frame for the robot.</summary>
+            <param name="newToolIndex">The index of TOOL_DATA[] for the new tool frame.</param>
+            <returns>The current position of the robot.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">The tool index is out of range for TOOL_DATA[].</exception>
+            <exception cref="T:RobotController.RobotCommunicationException">An error occurred during the communication with the robot.</exception>
+            <exception cref="T:System.TimeoutException">The robot required too much time sending back a response.</exception>
+            <exception cref="T:RobotController.RobotExecutionException">An error occured during the execution of the command at the robot.</exception>
+        </member>
+        <member name="M:RobotController.RobotControl.SetSystemVariable(System.String,System.Object,System.Nullable{System.Int32})">
+            <summary>Sets a systemvariable of the robot.</summary>
+            <param name="systemVariableName">The name of the systemvariable.</param>
+            <param name="newValue">The new value of the systemvariable.</param>
+            <param name="systemVariableIndex">If the systemvariable is an array of values this index determines which value will be set.</param>
+            <returns>The current position of the robot.</returns>
+            <exception cref="T:System.ArgumentNullException">An Argument is null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">The index of the systemvariable is out of range.</exception>
+            <exception cref="T:System.NotImplementedException">Setting a systemvariable of the given type is not implemented.</exception>
+            <exception cref="T:RobotController.RobotCommunicationException">An error occurred during the communication with the robot.</exception>
+            <exception cref="T:System.TimeoutException">The robot required too much time sending back a response.</exception>
+            <exception cref="T:RobotController.RobotExecutionException">An error occured during the execution of the command at the robot.</exception>
+        </member>
+        <member name="T:RobotController.RobotFrame">
+            <summary>Represents the values of a robot frame, including coordinates and orientation.</summary>
+        </member>
+        <member name="P:RobotController.RobotFrame.X">
+            <summary>The X coordinate in mm.</summary>
+        </member>
+        <member name="P:RobotController.RobotFrame.Y">
+            <summary>The Y coordinate in mm.</summary>
+        </member>
+        <member name="P:RobotController.RobotFrame.Z">
+            <summary>The Z coordinate in mm.</summary>
+        </member>
+        <member name="P:RobotController.RobotFrame.A">
+            <summary>The angle for the rotation around the Z-axis in degree.</summary>
+        </member>
+        <member name="P:RobotController.RobotFrame.B">
+            <summary>The angle for the rotation around the Y-axis in degree.</summary>
+        </member>
+        <member name="P:RobotController.RobotFrame.C">
+            <summary>The angle for the rotation around the X-axis in degree.</summary>
+        </member>
+        <member name="M:RobotController.RobotFrame.#ctor">
+            <summary>Initializes a new instance of the <c>RobotFrame</c> class and sets all values to 0.</summary>
+        </member>
+        <member name="M:RobotController.RobotFrame.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>Initializes a new instance of the <c>RobotFrame</c> class.</summary>
+            <param name="X">The value of the X coordinate in mm.</param>
+            <param name="Y">The value of the Y coordinate in mm.</param>
+            <param name="Z">The value of the Z coordinate in mm.</param>
+            <param name="A">The value of the rotation around the Z-axis in degree.</param>
+            <param name="B">The value of the rotation around the Y-axis in degree.</param>
+            <param name="C">The value of the rotation around the X-axis in degree.</param>
+        </member>
+        <member name="M:RobotController.RobotFrame.#ctor(System.Single,System.Single,System.Single)">
+            <summary>Initializes a new instance of the <c>RobotFrame</c> class and sets the orientation angles to 0.</summary>
+            <param name="X">The value of the X coordinate in mm.</param>
+            <param name="Y">The value of the Y coordinate in mm.</param>
+            <param name="Z">The value of the Z coordinate in mm.</param>
+        </member>
+        <member name="M:RobotController.RobotFrame.ToString">
+            <summary>Returns a string that represents the current object as XML.</summary>
+        </member>
+        <member name="T:RobotController.RobotCartPosition">
+            <summary>Represents the cartesian values of a robot position, including coordinates, orientation, status and turn.</summary>
+        </member>
+        <member name="P:RobotController.RobotCartPosition.Status">
+            <summary>The status helps determine the unambiguous position.</summary>
+        </member>
+        <member name="P:RobotController.RobotCartPosition.Turn">
+            <summary>The turn helps determine the unambiguous position.</summary>
+        </member>
+        <member name="M:RobotController.RobotCartPosition.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>Initializes a new instance of the <c>RobotCartPosition</c> class.</summary>
+            <param name="X">The value of the X coordinate in mm.</param>
+            <param name="Y">The value of the Y coordinate in mm.</param>
+            <param name="Z">The value of the Z coordinate in mm.</param>
+            <param name="A">The value of the rotation around the Z-axis in degree.</param>
+            <param name="B">The value of the rotation around the Y-axis in degree.</param>
+            <param name="C">The value of the rotation around the X-axis in degree.</param>
+        </member>
+        <member name="M:RobotController.RobotCartPosition.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32)">
+            <summary>Initializes a new instance of the <c>RobotCartPosition</c> class.</summary>
+            <param name="X">The value of the X coordinate in mm.</param>
+            <param name="Y">The value of the Y coordinate in mm.</param>
+            <param name="Z">The value of the Z coordinate in mm.</param>
+            <param name="A">The value of the rotation around the Z-axis in degree.</param>
+            <param name="B">The value of the rotation around the Y-axis in degree.</param>
+            <param name="C">The value of the rotation around the X-axis in degree.</param>
+            <param name="status">The value of the status of the position.</param>
+        </member>
+        <member name="M:RobotController.RobotCartPosition.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32,System.Int32)">
+            <summary>Initializes a new instance of the <c>RobotCartPosition</c> class.</summary>
+            <param name="X">The value of the X coordinate in mm.</param>
+            <param name="Y">The value of the Y coordinate in mm.</param>
+            <param name="Z">The value of the Z coordinate in mm.</param>
+            <param name="A">The value of the rotation around the Z-axis in degree.</param>
+            <param name="B">The value of the rotation around the Y-axis in degree.</param>
+            <param name="C">The value of the rotation around the X-axis in degree.</param>
+            <param name="status">The value of the status of the position.</param>
+            <param name="turn">The value of the turn of the position.</param>
+        </member>
+        <member name="M:RobotController.RobotCartPosition.#ctor">
+            <summary>Initializes a new instance of the <c>RobotCartPosition</c> class and sets all values to 0.</summary>
+        </member>
+        <member name="M:RobotController.RobotCartPosition.ToString">
+            <summary>Returns a string that represents the current object as XML.</summary>
+        </member>
+        <member name="T:RobotController.RobotCartMoveType">
+            <summary>Specifies the motion type for a cartesian target position.</summary>
+        </member>
+        <member name="F:RobotController.RobotCartMoveType.PTP">
+            <summary>Point-to-point motion. Moves the fastest path to the target position.</summary>
+        </member>
+        <member name="F:RobotController.RobotCartMoveType.LIN">
+            <summary>Linear motion. Moves the shortest cartesian path to the target position.</summary>
+        </member>
+        <member name="T:RobotController.XmlSerialization">
+            <summary>A class for serializing and deserialising objects using XML.</summary>
+        </member>
+        <member name="M:RobotController.XmlSerialization.ObjectToXml(System.Object)">
+            <summary>Serializes the specified object.</summary>
+            <param name="obj">The object to serialize.</param>
+            <returns>The XML respresentation.</returns>
+            <exception cref="T:System.InvalidOperationException">An error occurred during serialization. The original exception is available using the System.Exception.InnerException property.</exception>
+        </member>
+        <member name="M:RobotController.XmlSerialization.XmlToObject``1(System.String)">
+            <summary>Deserializes the XML.</summary>
+            <param name="xml">The XML to deserialize.</param>
+            <returns>The object being deserialized.</returns>
+            <exception cref="T:System.InvalidOperationException">An error occurred during deserialization. The original exception is available using the System.Exception.InnerException property.</exception>
+        </member>
+        <member name="T:RobotController.RobotPosition">
+            <summary>Represents a robot position, including axis and cartesian values plus the status of the gripper.</summary>
+        </member>
+        <member name="P:RobotController.RobotPosition.AxisPosition">
+            <summary>The axis values of the position.</summary>
+        </member>
+        <member name="P:RobotController.RobotPosition.CartPosition">
+            <summary>The cartesian values of the position.</summary>
+        </member>
+        <member name="P:RobotController.RobotPosition.GripperOpen">
+            <summary>The gripper status of the position.</summary>
+        </member>
+        <member name="M:RobotController.RobotPosition.#ctor">
+            <summary>Initializes a new instance of the <c>RobotPosition</c> class and sets all values to default.</summary>
+        </member>
+        <member name="M:RobotController.RobotPosition.#ctor(RobotController.RobotAxisPosition,RobotController.RobotCartPosition,System.Boolean)">
+            <summary>Initializes a new instance of the <c>RobotPosition</c> class.</summary>
+            <param name="axisPosition">The axis values of the position.</param>
+            <param name="cartPosition">The cartesian values of the position.</param>
+            <param name="gripperOpen">The status of the gripper.</param>
+        </member>
+        <member name="M:RobotController.RobotPosition.ToString">
+            <summary>Returns a string that represents the current object as XML.</summary>
+        </member>
+    </members>
+</doc>
