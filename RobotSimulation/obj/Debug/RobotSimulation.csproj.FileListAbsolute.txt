@@ -1,0 +1,11 @@
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\RobotSimulationFramework\RobotSimulation\bin\Debug\RobotSimulation.exe.config
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\RobotSimulationFramework\RobotSimulation\bin\Debug\RobotSimulation.exe
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\RobotSimulationFramework\RobotSimulation\bin\Debug\RobotSimulation.pdb
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\RobotSimulationFramework\RobotSimulation\bin\Debug\RobotController.dll
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\RobotSimulationFramework\RobotSimulation\bin\Debug\RobotController.xml
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\RobotSimulationFramework\RobotSimulation\obj\Debug\RobotSimulation.csproj.AssemblyReference.cache
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\RobotSimulationFramework\RobotSimulation\obj\Debug\RobotSimulation.csproj.SuggestedBindingRedirects.cache
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\RobotSimulationFramework\RobotSimulation\obj\Debug\RobotSimulation.csproj.CoreCompileInputs.cache
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\RobotSimulationFramework\RobotSimulation\obj\Debug\RobotSimulation.csproj.CopyComplete
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\RobotSimulationFramework\RobotSimulation\obj\Debug\RobotSimulation.exe
+C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\RobotSimulationFramework\RobotSimulation\obj\Debug\RobotSimulation.pdb
