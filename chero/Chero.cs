@@ -30,9 +30,17 @@ namespace chero
             fieldnumber.Add('H', 8);
         }
 
+        private void initBase()
+        {
+            control.SetBase(new RobotFrame(330, -260, 350, 0, 0, 0));
+            control.MoveAxesToPosition(new RobotAxisPosition(0, 0, 0, 0, -10, 0));
+            control.MoveTCPToPosition(new RobotCartPosition(330, -260, 350, 0, 0, 0), RobotCartMoveType.PTP, true);
+        }
+
         public void start()
         {
             this.control.StartConnection();
+            initBase();
         }
 
         public void stop()
@@ -54,8 +62,10 @@ namespace chero
 
         private void MoveRobotLin((int x, int y) p)
         {
-            control.MoveAxesToPosition(new RobotAxisPosition(0, 0, 0, 0, -10, 0));
-            control.MoveTCPToPosition(new RobotCartPosition(p.x * fieldLengthMM + 100, p.y * fieldLengthMM - 1300, 0, 0, 90, 0), RobotCartMoveType.PTP, true);
+            Console.WriteLine("===================================================");
+            Console.WriteLine("Robot current position: " + control.Position);
+            RobotPosition pos = control.MoveTCPToPosition(new RobotCartPosition(p.x * fieldLengthMM, p.y * fieldLengthMM, 0, 0, 90, 0), RobotCartMoveType.PTP, true);
+            Console.WriteLine("Robot moved Sucessfully to Position: " + pos);
         }
 
         private (int x, int y) parseInput(String input)
@@ -63,7 +73,8 @@ namespace chero
             char[] chars = input.ToCharArray();
             char firstChar = chars[0];
             char secondChar = chars[1];
-            return (fieldnumber[firstChar], secondChar);
+            int y = secondChar - '0';
+            return (fieldnumber[firstChar], y);
 
         }
 

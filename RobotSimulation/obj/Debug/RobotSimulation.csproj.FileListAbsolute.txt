@@ -9,3 +9,13 @@ C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\RobotSimulationFramew
 C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\RobotSimulationFramework\RobotSimulation\obj\Debug\RobotSimulation.csproj.CopyComplete
 C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\RobotSimulationFramework\RobotSimulation\obj\Debug\RobotSimulation.exe
 C:\Users\Niki\Documents\Studium\Master\Masterarbeit\git BA\RobotSimulationFramework\RobotSimulation\obj\Debug\RobotSimulation.pdb
+C:\Repos\chero\RobotSimulation\bin\Debug\RobotSimulation.exe.config
+C:\Repos\chero\RobotSimulation\bin\Debug\RobotSimulation.exe
+C:\Repos\chero\RobotSimulation\bin\Debug\RobotSimulation.pdb
+C:\Repos\chero\RobotSimulation\bin\Debug\RobotController.xml
+C:\Repos\chero\RobotSimulation\obj\Debug\RobotSimulation.csproj.AssemblyReference.cache
+C:\Repos\chero\RobotSimulation\obj\Debug\RobotSimulation.csproj.SuggestedBindingRedirects.cache
+C:\Repos\chero\RobotSimulation\obj\Debug\RobotSimulation.csproj.CoreCompileInputs.cache
+C:\Repos\chero\RobotSimulation\obj\Debug\RobotSimulation.csproj.CopyComplete
+C:\Repos\chero\RobotSimulation\obj\Debug\RobotSimulation.exe
+C:\Repos\chero\RobotSimulation\obj\Debug\RobotSimulation.pdb
