@@ -32,9 +32,11 @@ namespace chero
 
         private void initBase()
         {
+            int status = 2;
+            control.MoveAxesToPosition(new RobotAxisPosition(0, -90, 90, 0, -10, 0));
             control.SetBase(new RobotFrame(330, -260, 350, 0, 0, 0));
-            control.MoveAxesToPosition(new RobotAxisPosition(0, 0, 0, 0, -10, 0));
-            control.MoveTCPToPosition(new RobotCartPosition(330, -260, 350, 0, 0, 0), RobotCartMoveType.PTP, true);
+   
+            control.MoveTCPToPosition(new RobotCartPosition(0, 0, 0, 0, 0, 0, status), RobotCartMoveType.PTP, true);
         }
 
         public void start()
@@ -64,7 +66,7 @@ namespace chero
         {
             Console.WriteLine("===================================================");
             Console.WriteLine("Robot current position: " + control.Position);
-            RobotPosition pos = control.MoveTCPToPosition(new RobotCartPosition(p.x * fieldLengthMM, p.y * fieldLengthMM, 0, 0, 90, 0), RobotCartMoveType.PTP, true);
+            RobotPosition pos = control.MoveTCPToPosition(new RobotCartPosition(p.x * fieldLengthMM, p.y * fieldLengthMM, 0, 0, 90, 0), RobotCartMoveType.LIN, true);
             Console.WriteLine("Robot moved Sucessfully to Position: " + pos);
         }
 
