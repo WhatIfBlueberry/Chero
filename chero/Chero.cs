@@ -13,10 +13,11 @@ namespace chero
         private (int x, int y) currentPos;
         private RobotControl control;
         IDictionary<char, int> fieldnumber = new Dictionary<char, int>();
-        private int fieldLengthMM = 30;
+        private int fieldLengthMM = 35;
+        private int dropLengthMM = 47;
 
-        public Chero(String ip, int port) {
-            this.control = new RobotControl("127.0.0.1", 59152);
+        public Chero() {
+            this.control = new RobotControl();
             initDictionary();
         }
 
@@ -43,22 +44,21 @@ namespace chero
             MoveRobotLin(p);
         }
 
-        public void moveFromTo(Field from, Field to, Boolean dnd)
+        public void moveFromTo(Field from, Field to, bool dnd)
         {
             (int x, int y) fromCords = parseInput(from.ToString());
             (int x, int y) toCords = parseInput(to.ToString());
             Boolean isAtStartingPos = fromCords.Equals(currentPos);
-
             if (!isAtStartingPos)
             {
                 MoveRobotLin(fromCords);
             }
-            if (dnd)
+            if(dnd)
             {
                 grab();
             }
             MoveRobotLin(toCords);
-            if (dnd)
+            if(dnd)
             {
                 putDown();
             }
@@ -66,23 +66,23 @@ namespace chero
 
         private void grab()
         {
-            control.MoveTCPToPosition(new RobotCartPosition(0, 0, fieldLengthMM, 0, 0, 0), RobotCartMoveType.LIN, true);
+            control.MoveTCPToPosition(new RobotCartPosition(dropLengthMM, 0, 0, 0, 0, 0), RobotCartMoveType.LIN, true);
             control.CloseGripper();
-            control.MoveTCPToPosition(new RobotCartPosition(0, 0, -fieldLengthMM, 0, 0, 0), RobotCartMoveType.LIN, true);
+            control.MoveTCPToPosition(new RobotCartPosition(-dropLengthMM, 0, 0, 0, 0, 0), RobotCartMoveType.LIN, true);
         }
 
         private void putDown()
         {
-            control.MoveTCPToPosition(new RobotCartPosition(0, 0, fieldLengthMM, 0, 0, 0), RobotCartMoveType.LIN, true);
+            control.MoveTCPToPosition(new RobotCartPosition(dropLengthMM, 0, 0, 0, 0, 0), RobotCartMoveType.LIN, true);
             control.OpenGripper();
-            control.MoveTCPToPosition(new RobotCartPosition(0, 0, -fieldLengthMM, 0, 0, 0), RobotCartMoveType.LIN, true);
+            control.MoveTCPToPosition(new RobotCartPosition(-dropLengthMM, 0, 0, 0, 0, 0), RobotCartMoveType.LIN, true);
         }
 
         private void MoveRobotLin((int x, int y) p)
         {
             Console.WriteLine("===================================================");
             Console.WriteLine("Robot current position: " + control.Position);
-            RobotPosition pos = control.MoveTCPToPosition(new RobotCartPosition((p.x - 1) * fieldLengthMM, (p.y - 1) * fieldLengthMM, 0, 0, 90, 0), RobotCartMoveType.PTP, true);
+            RobotPosition pos = control.MoveTCPToPosition(new RobotCartPosition(0, -(p.x - 1) * fieldLengthMM, (p.y - 1) * fieldLengthMM, 0, 0, 0), RobotCartMoveType.LIN, false);
             Console.WriteLine("Robot moved Sucessfully to Position: " + pos);
             this.currentPos = p;
         }
@@ -111,10 +111,13 @@ namespace chero
 
         private void initBase()
         {
-            int status = 2;
+            int status = 6;
             control.MoveAxesToPosition(new RobotAxisPosition(0, -90, 90, 0, -10, 0));
-            control.SetBase(new RobotFrame(330, -260, 350, 0, 0, 0));
-            control.MoveTCPToPosition(new RobotCartPosition(0, 0, 0, 0, 0, 0, status), RobotCartMoveType.PTP, true);
+            control.SetBase(3);
+            control.SetTool(3);
+            control.MoveTCPToPosition(new RobotCartPosition(470, 0, 580, -122, 90, -122, status), RobotCartMoveType.PTP, false);
+            control.SetBase(4);
+            control.MoveTCPToPosition(new RobotCartPosition(0, 0, 0, 0, 0, 0, status), RobotCartMoveType.PTP, false);
             this.currentPos = (1, 1);
         }
 
