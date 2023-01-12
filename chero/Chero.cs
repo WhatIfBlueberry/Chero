@@ -18,12 +18,12 @@ namespace chero
 
         public Chero() {
             this.control = new RobotControl();
-            initDictionary();
         }
 
         public void start()
         {
             this.control.StartConnection();
+            initDictionary();
             initBase();
         }
 
@@ -49,19 +49,19 @@ namespace chero
             (int x, int y) fromCords = parseInput(from.ToString());
             (int x, int y) toCords = parseInput(to.ToString());
             Boolean isAtStartingPos = fromCords.Equals(currentPos);
-            if (!isAtStartingPos)
+            if (!isAtStartingPos) // if not already at starting field
             {
+                // move to starting field
                 MoveRobotLin(fromCords);
             }
-            if(dnd)
+            if(dnd) // if drag 'n drop flag active
             {
-                grab();
+                grab(); // picks up the piece
+                MoveRobotLin(toCords);
+                putDown(); // puts the piece back down
             }
+            //otherwise only move
             MoveRobotLin(toCords);
-            if(dnd)
-            {
-                putDown();
-            }
         }
 
         private void grab()
