@@ -8,9 +8,15 @@ namespace chero
         {
             Chero chero = new Chero();
             chero.start();
-            //chero.testrun();
-            //Console.WriteLine(Field.A1.ToString());
-            chero.moveFromTo(Field.A3, Field.B3, true);
+            chero.moveFromTo(Field.E2, Field.E4);
+            chero.moveFromTo(Field.E7, Field.E5);
+            chero.moveFromTo(Field.D4, Field.H5);
+            chero.moveFromTo(Field.B8, Field.C6);
+            chero.moveFromTo(Field.F1, Field.C4);
+            chero.moveFromTo(Field.H5, Field.F7);
+            chero.moveFromTo(Field.G8, Field.F6);
+            chero.moveFromTo(Field.F7, Field.Trash);
+            chero.moveFromTo(Field.H5, Field.F7);
             //chero.stop();
 
         }

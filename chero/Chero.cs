@@ -44,7 +44,7 @@ namespace chero
             MoveRobotLin(p);
         }
 
-        public void moveFromTo(Field from, Field to, bool dnd)
+        public void moveFromTo(Field from, Field to, bool dnd=true)
         {
             (int x, int y) fromCords = parseInput(from.ToString());
             (int x, int y) toCords = parseInput(to.ToString());
@@ -59,6 +59,7 @@ namespace chero
                 grab(); // picks up the piece
                 MoveRobotLin(toCords);
                 putDown(); // puts the piece back down
+                return;
             }
             //otherwise only move
             MoveRobotLin(toCords);
@@ -89,6 +90,10 @@ namespace chero
 
         private (int x, int y) parseInput(String input)
         {
+            if (input.Length > 2)
+            {
+                return (-2, 8);
+            }
             char[] chars = input.ToCharArray();
             char firstChar = chars[0];
             char secondChar = chars[1];
