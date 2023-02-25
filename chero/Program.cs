@@ -18,6 +18,7 @@ namespace chero
             chero.moveFromTo(Field.F7, Field.Trash);
             chero.moveFromTo(Field.H5, Field.F7);
             //chero.stop();
+            //This could be a good place to put your code
 
         }
     }
