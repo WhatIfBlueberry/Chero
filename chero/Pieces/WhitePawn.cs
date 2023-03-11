@@ -14,7 +14,18 @@ namespace chero
 
         public override bool canReach(Field field, bool takes)
         {
-            return true;
+            (int x, int y) current = Helper.parseInput(this.field);
+            (int x, int y) target = Helper.parseInput(field);
+            if (takes)
+            {
+                return (current.x == (target.x + 1) || current.x == (target.x - 1)) && target.y > current.y;
+            }
+            bool isAtStartingPos = current.y == 2;
+            if (isAtStartingPos)
+            {
+                return current.x == target.x && (current.y == (target.y - 1) || current.y == (target.y - 2));
+            }
+            return current.x == target.x && current.y == (target.y - 1);
         }
 
     }

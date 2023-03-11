@@ -12,7 +12,6 @@ namespace chero
     {
         private (int x, int y) currentPos;
         private RobotControl control;
-        IDictionary<char, int> fieldnumber = new Dictionary<char, int>();
         private int fieldLengthMM = 35;
         private int dropLengthMM = 47;
 
@@ -23,7 +22,6 @@ namespace chero
         public void start()
         {
             this.control.StartConnection();
-            initDictionary();
             initBase();
         }
 
@@ -32,22 +30,10 @@ namespace chero
             this.control.CloseConnection();
         }
 
-        public void testrun()
-        {
-            Console.WriteLine("Enter field to move to (Chess Format e.g. A3): ");
-            string? input = Console.ReadLine();
-            if (input == null)
-            {
-                throw new InvalidDataException();
-            }
-            (int x, int y) p = parseInput(input);
-            MoveRobotLin(p);
-        }
-
         public void moveFromTo(Field from, Field to, bool dnd=true)
         {
-            (int x, int y) fromCords = parseInput(from.ToString());
-            (int x, int y) toCords = parseInput(to.ToString());
+            (int x, int y) fromCords = Helper.parseInput(from);
+            (int x, int y) toCords = Helper.parseInput(to);
             Boolean isAtStartingPos = fromCords.Equals(currentPos);
             if (!isAtStartingPos) // if not already at starting field
             {
@@ -81,37 +67,8 @@ namespace chero
 
         private void MoveRobotLin((int x, int y) p)
         {
-            Console.WriteLine("===================================================");
-            Console.WriteLine("Robot current position: " + control.Position);
             RobotPosition pos = control.MoveTCPToPosition(new RobotCartPosition(0, -(p.x - 1) * fieldLengthMM, (p.y - 1) * fieldLengthMM, 0, 0, 0), RobotCartMoveType.LIN, false);
-            Console.WriteLine("Robot moved Sucessfully to Position: " + pos);
             this.currentPos = p;
-        }
-
-        private (int x, int y) parseInput(String input)
-        {
-            if (input.Length > 2)
-            {
-                return (-2, 8);
-            }
-            char[] chars = input.ToCharArray();
-            char firstChar = chars[0];
-            char secondChar = chars[1];
-            int y = secondChar - '0';
-            return (fieldnumber[firstChar], y);
-
-        }
-
-        private void initDictionary()
-        {
-            fieldnumber.Add('A', 1);
-            fieldnumber.Add('B', 2);
-            fieldnumber.Add('C', 3);
-            fieldnumber.Add('D', 4);
-            fieldnumber.Add('E', 5);
-            fieldnumber.Add('F', 6);
-            fieldnumber.Add('G', 7);
-            fieldnumber.Add('H', 8);
         }
 
         private void initBase()

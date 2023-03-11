@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace chero
+namespace chero.Pieces
 {
-    internal class Queen : AbstractChessPiece
+    internal class King
     {
-        public Queen(Field field) : base(field)
-        {
-        }
-
     }
 }
