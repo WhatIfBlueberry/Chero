@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace chero.Pieces
 {
-    internal class King
+    internal class King : AbstractChessPiece
     {
+        public King(Field field) : base(field)
+        {
+        }
+
+
     }
 }

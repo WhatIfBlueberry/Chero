@@ -8,7 +8,7 @@ namespace chero
 {
     abstract class AbstractChessPiece : IChessPiece
     {
-        Field field;
+        protected Field field;
 
         public AbstractChessPiece(Field field)
         {

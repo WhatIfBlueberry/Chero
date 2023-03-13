@@ -24,12 +24,9 @@ namespace chero
                     {
                         continue;
                     }
-                    if (current.x + i == target.x || current.x - i == target.x)
+                    if (current.x + i == target.x || current.x - i == target.x && (target.y + j == target.y || target.y - j == target.y))
                     {
-                        if (target.y + j == target.y || target.y- j == target.y)
-                        {
-                            return true;
-                        }
+                        return true;
                     }
                 }
             }

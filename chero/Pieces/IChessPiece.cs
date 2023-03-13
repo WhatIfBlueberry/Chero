@@ -8,10 +8,10 @@ namespace chero
 {
     internal interface IChessPiece
     {
-        Field getField();
+        public Field getField();
 
-        void setField(Field field);
+        public void setField(Field field);
 
-        Boolean canReach(Field field, Boolean takes);
+        public bool canReach(Field field, bool takes);
     }
 }

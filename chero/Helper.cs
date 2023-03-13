@@ -48,5 +48,11 @@ namespace chero
                     return -1;
             }
         }
+
+        public static bool occupied(Field field)
+        {
+            ChessBoard board = ChessBoard.Instance;
+            return board.occupied(field);
+        }
     }
 }
