@@ -20,6 +20,11 @@ namespace chero
             return true;
         }
 
+        public virtual bool isUnique()
+        {
+            return false;
+        }
+
         public Field getField()
         {
             return this.field;

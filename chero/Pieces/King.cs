@@ -12,6 +12,9 @@ namespace chero.Pieces
         {
         }
 
-
+        public override bool isUnique()
+        {
+            return true;
+        }
     }
 }

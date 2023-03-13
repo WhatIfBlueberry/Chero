@@ -12,5 +12,10 @@ namespace chero
         {
         }
 
+        public override bool isUnique()
+        {
+            return true;
+        }
+
     }
 }
