@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace chero
 {
@@ -49,10 +50,20 @@ namespace chero
             }
         }
 
-        public static bool occupied(Field field)
+        public static HashSet<IChessPiece> getEquals(IChessPiece piece)
         {
+            HashSet<IChessPiece> ret = new HashSet<IChessPiece>();
             ChessBoard board = ChessBoard.Instance;
-            return board.occupied(field);
+            var type = piece.GetType();
+            HashSet<IChessPiece> pieces = board.getFigures();
+            foreach (IChessPiece figure in pieces)
+            {
+                if (figure.GetType() == type)
+                {
+                    ret.Add(figure);
+                }
+            }
+            return ret;
         }
     }
 }
