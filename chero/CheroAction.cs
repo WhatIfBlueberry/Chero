@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace chero
 {
@@ -21,6 +22,11 @@ namespace chero
         public void execute()
         {
             this.chero.moveFromTo(from, to, true);
+        }
+
+        public override string ToString()
+        {
+            return $"Chero moves from: {from}, to: {to}";
         }
     }
 }

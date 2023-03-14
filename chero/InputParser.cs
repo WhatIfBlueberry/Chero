@@ -29,8 +29,10 @@ namespace chero
                     foreach (string substring in substrings)
                     {
                         IChessPiece piece = getPiece(substring[0]);
-
-                        // ret.Add(new MoveAction(Piece, targetField, takes, isWhite))
+                        Field targetField = Field.UNKNOWN; // TODO
+                        bool takes = substring.Contains('x');
+                        bool isWhite = true; // (counter % 2 == 0)
+                        ret.Add(new MoveAction(piece, targetField, takes, isWhite));
 
                     }
                     return ret;
