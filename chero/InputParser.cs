@@ -31,7 +31,7 @@ namespace chero
                         IChessPiece piece = getPiece(substring[0]);
                         Field targetField = Field.UNKNOWN; // TODO
                         bool takes = substring.Contains('x');
-                        bool isWhite = true; // (counter % 2 == 0)
+                        bool isWhite = true; // (counter % 2 == 0) TODO
                         ret.Add(new MoveAction(piece, targetField, takes, isWhite));
 
                     }
