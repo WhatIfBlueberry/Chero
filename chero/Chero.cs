@@ -37,7 +37,6 @@ namespace chero
             Boolean isAtStartingPos = fromCords.Equals(currentPos);
             if (!isAtStartingPos) // if not already at starting field
             {
-                // move to starting field
                 MoveRobotLin(fromCords);
             }
             if(dnd) // if drag 'n drop flag active
