@@ -25,5 +25,10 @@ namespace chero
             }
             return !targetIsBlack;
         }
+
+        public override string ToString()
+        {
+            return "Bishop";
+        }
     }
 }

@@ -20,12 +20,12 @@ namespace chero
             return true;
         }
 
-        public virtual bool isUnique()
+        public virtual bool isUnknown()
         {
             return false;
         }
 
-        public Field getField()
+        public virtual Field getField()
         {
             return this.field;
         }
@@ -34,6 +34,7 @@ namespace chero
         {
             this.field = field;
         }
+
     }
 
 

@@ -16,21 +16,15 @@ namespace chero
         {
             (int x, int y) current = Helper.parseInput(this.field);
             (int x, int y) target = Helper.parseInput(field);
-            for (int i = 1; i <= 2; i++)
-            {
-                for (int j = 1; j <= 2; j++)
-                {
-                    if (i+j > 3)
-                    {
-                        continue;
-                    }
-                    if (current.x + i == target.x || current.x - i == target.x && (target.y + j == target.y || target.y - j == target.y))
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
+
+            return (Math.Abs(current.x - target.x) == 1 && Math.Abs(current.y - target.y) == 2) ||
+                (Math.Abs(current.x - target.x) == 2 && Math.Abs(current.y - target.y) == 1);
+        }
+
+
+        public override string ToString()
+        {
+            return "Knight";
         }
     }
 }

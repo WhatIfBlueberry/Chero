@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace chero
 {
@@ -12,9 +13,18 @@ namespace chero
         {
         }
 
-        public override bool isUnique()
+        public override Field getField()
         {
-            return true;
+            if(base.getField() == Field.UNKNOWN)
+            {
+                return this.field;
+            }
+            return this.field;
+        }
+
+        public override string ToString()
+        {
+            return "Queen";
         }
 
     }

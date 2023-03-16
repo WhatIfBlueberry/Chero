@@ -3,6 +3,7 @@ namespace chero
 {
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
             List<MoveAction> parsedActions = InputParser.parse();

@@ -28,5 +28,10 @@ namespace chero
             return current.x == target.x && current.y == (target.y - 1);
         }
 
+        public override string ToString()
+        {
+            return "Pawn";
+        }
+
     }
 }

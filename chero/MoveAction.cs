@@ -23,6 +23,7 @@ namespace chero
         public IChessPiece getPiece() { return piece; }
         public Field getTarget() { return target; }
         public bool getTakes() { return takes; }
+        public bool getIsWhite() { return isWhite;  }
 
 
 

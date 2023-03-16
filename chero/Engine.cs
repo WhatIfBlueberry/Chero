@@ -1,4 +1,5 @@
-﻿using System;
+﻿using chero.Pieces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -32,12 +33,14 @@ namespace chero
         {
             IChessPiece piece = action.getPiece();
             Field target = action.getTarget();
-            if (!piece.isUnique())
+            if (piece.isUnknown())
             {
-                piece = determinePiece(piece, target, action.getTakes());
+                return new CheroAction(chero, new UnknownPiece(Field.UNKNOWN), Field.UNKNOWN, Field.UNKNOWN, true);
             }
+            piece = determinePiece(piece, target, action.getTakes());
+            CheroAction ret = new CheroAction(chero, piece, piece.getField(), target, action.getIsWhite());
             piece.setField(target);
-            return new CheroAction(chero, piece.getField(), target);
+            return ret;
         }
 
         private IChessPiece determinePiece(IChessPiece piece, Field target, bool takes)
@@ -52,7 +55,8 @@ namespace chero
             }
             // this return is just a blank and will throw NPE.
             // this case should never happen
-            return new WhitePawn(target);
+            throw new InvalidOperationException("Engine found impossible move");
+
 
         }
     }

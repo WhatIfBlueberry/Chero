@@ -23,5 +23,10 @@ namespace chero.Pieces
             return true;
             // TODO think about what happens if both rooks are on the same line.
         }
+
+        public override string ToString()
+        {
+            return "Rook";
+        }
     }
 }

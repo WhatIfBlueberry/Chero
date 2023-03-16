@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using chero.Pieces;
+using System.Windows.Forms;
 
 namespace chero
 {
@@ -12,8 +13,12 @@ namespace chero
     {
         public static List<MoveAction> parse()
         {
-            string filePath = "./chess_moves.pgn";
-            string[] lines = File.ReadAllLines(filePath);
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() != DialogResult.OK)
+            {
+                return new List<MoveAction>();
+            }
+            string[] lines = File.ReadAllLines(openFileDialog.FileName);
             bool shouldProcess = false;
             foreach (string line in lines)
             {
@@ -28,10 +33,16 @@ namespace chero
                     List<string> substrings = new List<string>(output.Split(' '));
                     List<MoveAction> ret = new List<MoveAction>();
                     int counter = 0;
-                    bool isWhite = true;
+                    bool isWhite;
 
                     foreach (string substring in substrings)
                     {
+                        // TODO future implementation for castle etc.
+                        if(substring.StartsWith("O") || substring.Contains("+") || substring.Contains("#") || substring.Contains("-")) {
+                            ret.Add(new MoveAction(new UnknownPiece(Field.UNKNOWN), Field.UNKNOWN, false, false));
+                            counter++;
+                            continue;
+                        }
                         // get target field
                         string target = substring.Substring(substring.Length - 2);
                         target = target.ToUpper();
@@ -50,16 +61,9 @@ namespace chero
                         bool takes = substring.Contains('x');
 
                         // get white or black piece
-                        if (counter % 2 == 0)
-                        {
-                            isWhite = true;
-                        }
-                        else
-                        {
-                            isWhite = false;
-                        }
+                        isWhite = counter % 2 == 0;
 
-                        counter = counter + 1;
+                        counter++;
                         IChessPiece piece = getPiece(substring[0], isWhite);
                         ret.Add(new MoveAction(piece, targetField, takes, isWhite));
 

@@ -12,9 +12,9 @@ namespace chero.Pieces
         {
         }
 
-        public override bool isUnique()
+        public override string ToString()
         {
-            return true;
+            return "King";
         }
     }
 }

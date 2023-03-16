@@ -14,6 +14,6 @@ namespace chero
 
         public bool canReach(Field field, bool takes);
 
-        public bool isUnique();
+        public bool isUnknown();
     }
 }
