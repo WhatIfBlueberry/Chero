@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repos\\chero\\chero\\chero.csproj": {}
+    "C:\\Users\\nicol\\OneDrive\\Desktop\\Chero\\CheroProject2\\chero\\chero\\chero.csproj": {}
   },
   "projects": {
-    "C:\\Repos\\chero\\chero\\chero.csproj": {
+    "C:\\Users\\nicol\\OneDrive\\Desktop\\Chero\\CheroProject2\\chero\\chero\\chero.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repos\\chero\\chero\\chero.csproj",
+        "projectUniqueName": "C:\\Users\\nicol\\OneDrive\\Desktop\\Chero\\CheroProject2\\chero\\chero\\chero.csproj",
         "projectName": "chero",
-        "projectPath": "C:\\Repos\\chero\\chero\\chero.csproj",
-        "packagesPath": "C:\\Users\\Test\\.nuget\\packages\\",
-        "outputPath": "C:\\Repos\\chero\\chero\\obj\\",
+        "projectPath": "C:\\Users\\nicol\\OneDrive\\Desktop\\Chero\\CheroProject2\\chero\\chero\\chero.csproj",
+        "packagesPath": "C:\\Users\\nicol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nicol\\OneDrive\\Desktop\\Chero\\CheroProject2\\chero\\chero\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Test\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

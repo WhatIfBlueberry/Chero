@@ -5,11 +5,10 @@ namespace chero
     {
         static void Main(string[] args)
         {
-            // ask for user input
-            // parse to List of MoveActions
+            List<MoveAction> parsedActions = InputParser.parse();
             Chero chero = new Chero();
-            Engine engine = new Engine(chero, new List<MoveAction>());
-            engine.transform().ForEach(action => action.execute());
+            Engine engine = new Engine(chero, parsedActions);
+            engine.transform().ForEach(action => Console.WriteLine(action));
         }
     }
 }

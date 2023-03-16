@@ -11,11 +11,13 @@ namespace chero
         private IChessPiece piece;
         private Field target;
         private bool takes;
-        public MoveAction(IChessPiece piece, Field target, bool takes)
+        private bool isWhite;
+        public MoveAction(IChessPiece piece, Field target, bool takes, bool isWhite)
         {
             this.piece = piece;
             this.target = target;
             this.takes = takes;
+            this.isWhite = isWhite;
         }
 
         public IChessPiece getPiece() { return piece; }
