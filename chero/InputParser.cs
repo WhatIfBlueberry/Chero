@@ -12,7 +12,8 @@ namespace chero
     {
         public static List<MoveAction> parse()
         {
-            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\nicol\OneDrive\Desktop\Chero\chero\chess_moves.pgn");
+            string filePath = "./chess_moves.pgn";
+            string[] lines = File.ReadAllLines(filePath);
             bool shouldProcess = false;
             foreach (string line in lines)
             {
@@ -22,16 +23,44 @@ namespace chero
                 }
                 else if (shouldProcess)
                 {
+                    // preperate string for further processing
                     string output = Regex.Replace(line, @"\d+\.\s*", string.Empty);
                     List<string> substrings = new List<string>(output.Split(' '));
                     List<MoveAction> ret = new List<MoveAction>();
+                    int counter = 0;
+                    bool isWhite = true;
 
                     foreach (string substring in substrings)
                     {
-                        IChessPiece piece = getPiece(substring[0]);
-                        Field targetField = Field.UNKNOWN; // TODO
+                        // get target field
+                        string target = substring.Substring(substring.Length - 2);
+                        target = target.ToUpper();
+                        Field targetField = Field.UNKNOWN;
+                        bool isDefined = Enum.IsDefined(typeof(Field), target);
+                        if (isDefined)
+                        {
+                            targetField = (Field) Enum.Parse(typeof(Field), target);
+                        }
+                        else
+                        {
+                            targetField = Field.UNKNOWN;
+                        }
+                            
+                        // get action
                         bool takes = substring.Contains('x');
-                        bool isWhite = true; // (counter % 2 == 0) TODO
+
+                        // get white or black piece
+                        if (counter % 2 == 0)
+                        {
+                            isWhite = true;
+                        }
+                        else
+                        {
+                            isWhite = false;
+                        }
+
+                        counter = counter + 1;
+                        IChessPiece piece = getPiece(substring[0], isWhite);
                         ret.Add(new MoveAction(piece, targetField, takes, isWhite));
 
                     }
@@ -41,7 +70,7 @@ namespace chero
             return new List<MoveAction>();
         }
 
-        private static IChessPiece getPiece(char c)
+        private static IChessPiece getPiece(char c, bool isWhite)
         {
             IChessPiece piece;
             switch (c)
@@ -63,8 +92,13 @@ namespace chero
                     break;
 
                 default:
-                    // TODO return BlackPawn if black turn
-                    piece = new WhitePawn(Field.UNKNOWN);
+                    if (isWhite){
+                        piece = new WhitePawn(Field.UNKNOWN);
+                    }
+                    else
+                    {
+                        piece = new BlackPawn(Field.UNKNOWN);
+                    }
                     break;
             }
             return piece;
