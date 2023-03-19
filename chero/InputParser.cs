@@ -37,8 +37,29 @@ namespace chero
 
                     foreach (string substring in substrings)
                     {
+                        // get white or black piece
+                        isWhite = counter % 2 == 0;
+
+                        if (substring.StartsWith("O"))
+                        {
+                            if (isWhite)
+                            {
+                                ret.Add(new MoveAction(new Rook(Field.H1), Field.F1, false, true));
+                                ret.Add(new MoveAction(new King(Field.E1), Field.G1, false, true));
+                                
+                            }
+                            else
+                            {
+                                ret.Add(new MoveAction(new Rook(Field.H8), Field.F8, false, false));
+                                ret.Add(new MoveAction(new King(Field.E8), Field.G8, false, false));
+                                
+                            }
+                            counter++;
+                            continue;
+                        }
+
                         // TODO future implementation for castle etc.
-                        if(substring.StartsWith("O") || substring.Contains("+") || substring.Contains("#") || substring.Contains("-")) {
+                        if (substring.Contains("+") || substring.Contains("#") || substring.Contains("-")) {
                             ret.Add(new MoveAction(new UnknownPiece(Field.UNKNOWN), Field.UNKNOWN, false, false));
                             counter++;
                             continue;
@@ -48,64 +69,20 @@ namespace chero
                         target = target.ToUpper();
                         Field targetField = Field.UNKNOWN;
                         bool isDefined = Enum.IsDefined(typeof(Field), target);
-                        if (isDefined)
-                        {
-                            targetField = (Field) Enum.Parse(typeof(Field), target);
-                        }
-                        else
-                        {
-                            targetField = Field.UNKNOWN;
-                        }
+                        targetField = isDefined ? (Field)Enum.Parse(typeof(Field), target) : Field.UNKNOWN;
                             
                         // get action
                         bool takes = substring.Contains('x');
 
-                        // get white or black piece
-                        isWhite = counter % 2 == 0;
-
                         counter++;
-                        IChessPiece piece = getPiece(substring[0], isWhite);
-                        ret.Add(new MoveAction(piece, targetField, takes, isWhite));
 
+                        IChessPiece piece = UltimateChessPieceFactory.create(substring[0], isWhite);
+                        ret.Add(new MoveAction(piece, targetField, takes, isWhite));
                     }
                     return ret;
                 }
             }
             return new List<MoveAction>();
-        }
-
-        private static IChessPiece getPiece(char c, bool isWhite)
-        {
-            IChessPiece piece;
-            switch (c)
-            {
-                case 'K':
-                    piece = new King(Field.UNKNOWN);
-                    break;
-                case 'Q':
-                    piece = new Queen(Field.UNKNOWN);
-                    break;
-                case 'N':
-                    piece = new Knight(Field.UNKNOWN);
-                    break;
-                case 'B':
-                    piece = new Bishop(Field.UNKNOWN);
-                    break;
-                case 'R':
-                    piece = new Rook(Field.UNKNOWN);
-                    break;
-
-                default:
-                    if (isWhite){
-                        piece = new WhitePawn(Field.UNKNOWN);
-                    }
-                    else
-                    {
-                        piece = new BlackPawn(Field.UNKNOWN);
-                    }
-                    break;
-            }
-            return piece;
         }
     }
 }
