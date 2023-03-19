@@ -24,6 +24,10 @@ namespace chero
             List<CheroAction> ret = new List<CheroAction>();
             foreach (MoveAction action in actions)
             {
+                if (action.getTakes())
+                {
+                    ret.Add(new CheroAction(chero, new UnknownPiece(Field.UNKNOWN), action.getTarget(), Field.oob, false));
+                }
                 ret.Add(moveToChero(action));
             }
             return ret;
@@ -53,11 +57,7 @@ namespace chero
                     return piece2;
                 }
             }
-            // this return is just a blank and will throw NPE.
-            // this case should never happen
-            throw new InvalidOperationException("Engine found impossible move");
-
-
+            throw new InvalidOperationException("Engine found impossible move, while trying to move: " + piece + " on it's way to: " + target);
         }
     }
 }

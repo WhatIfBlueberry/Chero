@@ -1,4 +1,5 @@
-﻿using System;
+﻿using chero.Pieces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,6 +65,12 @@ namespace chero
                 }
             }
             return ret;
+        }
+
+        public static bool occupied(Field field)
+        {
+            ChessBoard board = ChessBoard.Instance;
+            return board.occupied(field);
         }
     }
 }

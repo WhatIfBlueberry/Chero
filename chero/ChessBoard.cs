@@ -43,14 +43,14 @@ namespace chero
             figures.Add(new WhitePawn(Field.F2));
             figures.Add(new WhitePawn(Field.G2));
             figures.Add(new WhitePawn(Field.H2));
-            figures.Add(new Rook(Field.A1));
-            figures.Add(new Knight(Field.B1));
-            figures.Add(new Bishop(Field.C1));
-            figures.Add(new Queen(Field.D1));
+            figures.Add(new WhiteRook(Field.A1));
+            figures.Add(new WhiteKnight(Field.B1));
+            figures.Add(new WhiteBishop(Field.C1));
+            figures.Add(new WhiteQueen(Field.D1));
             figures.Add(new King(Field.E1));
-            figures.Add(new Bishop(Field.F1));
-            figures.Add(new Knight(Field.G1));
-            figures.Add(new Rook(Field.H1));
+            figures.Add(new WhiteBishop(Field.F1));
+            figures.Add(new WhiteKnight(Field.G1));
+            figures.Add(new WhiteRook(Field.H1));
 
             // black pieces 
             figures.Add(new BlackPawn(Field.A7));
@@ -61,19 +61,31 @@ namespace chero
             figures.Add(new BlackPawn(Field.F7));
             figures.Add(new BlackPawn(Field.G7));
             figures.Add(new BlackPawn(Field.H7));
-            figures.Add(new Rook(Field.A8));
-            figures.Add(new Knight(Field.B8));
-            figures.Add(new Bishop(Field.C8));
-            figures.Add(new Queen(Field.D8));
+            figures.Add(new BlackRook(Field.A8));
+            figures.Add(new BlackKnight(Field.B8));
+            figures.Add(new BlackBishop(Field.C8));
+            figures.Add(new BlackQueen(Field.D8));
             figures.Add(new King(Field.E8));
-            figures.Add(new Bishop(Field.F8));
-            figures.Add(new Knight(Field.G8));
-            figures.Add(new Rook(Field.H1));
+            figures.Add(new BlackBishop(Field.F8));
+            figures.Add(new BlackKnight(Field.G8));
+            figures.Add(new BlackRook(Field.H1));
         }
 
         public HashSet<IChessPiece> getFigures()
         {
             return new HashSet<IChessPiece>(figures);
+        }
+
+        public bool occupied(Field field)
+        {
+            foreach (var figure in figures)
+            {
+                if (figure.getField().Equals(field))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
     }
