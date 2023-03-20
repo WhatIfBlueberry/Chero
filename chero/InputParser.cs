@@ -44,13 +44,13 @@ namespace chero
                         {
                             if (isWhite)
                             {
-                                ret.Add(new MoveAction(new Rook(Field.H1), Field.F1, false, true));
+                                ret.Add(new MoveAction(new WhiteRook(Field.H1), Field.F1, false, true));
                                 ret.Add(new MoveAction(new King(Field.E1), Field.G1, false, true));
                                 
                             }
                             else
                             {
-                                ret.Add(new MoveAction(new Rook(Field.H8), Field.F8, false, false));
+                                ret.Add(new MoveAction(new BlackRook(Field.H8), Field.F8, false, false));
                                 ret.Add(new MoveAction(new King(Field.E8), Field.G8, false, false));
                                 
                             }

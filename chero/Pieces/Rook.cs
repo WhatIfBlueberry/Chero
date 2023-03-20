@@ -31,15 +31,12 @@ namespace chero.Pieces
                 
                 for (int i = 1; i < diff; i++)
                 {
-                    string field_as_string = help_vec[current.x] + (c_y + i).ToString();
+                    string field_as_string = help_vec[current.x - 1] + (c_y + i).ToString();
                     Field btw_field = (Field)Enum.Parse(typeof(Field), field_as_string);
                     if (Helper.occupied(btw_field))
                     {
                         return false;
                     }
-                    // field = current.x , current.y + i
-                    // if isoccupied(field):
-                    // return false
                     
                 }
                 return true;
@@ -53,16 +50,12 @@ namespace chero.Pieces
 
                 for (int i = 1; i < diff; i++)
                 {
-                    string field_as_string = help_vec[c_x + i] + (current.y).ToString();
+                    string field_as_string = help_vec[c_x + i - 1] + (current.y).ToString();
                     Field btw_field = (Field)Enum.Parse(typeof(Field), field_as_string);
                     if (Helper.occupied(btw_field))
                     {
                         return false;
                     }
-                    // field = current.x , current.y + i
-                    // if isoccupied(field):
-                    // return false
-
                 }
                 return true;
             }
@@ -70,8 +63,6 @@ namespace chero.Pieces
             {
                 return true;
             }
-            
-            // TODO think about what happens if both rooks are on the same line.
         }
 
         public override string ToString()
