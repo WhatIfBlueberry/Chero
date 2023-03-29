@@ -88,5 +88,16 @@ namespace chero
             return false;
         }
 
+        public IChessPiece pieceOnField(Field field)
+        {
+            foreach (var figure in figures)
+            {
+                if (figure.getField().Equals(field))
+                {
+                    return figure;
+                }
+            }
+            throw new InvalidOperationException($"Piece expected on field {field} not present");
+        }
     }
 }

@@ -72,5 +72,11 @@ namespace chero
             ChessBoard board = ChessBoard.Instance;
             return board.occupied(field);
         }
+
+        public static IChessPiece pieceOnField(Field field)
+        {
+            ChessBoard board = ChessBoard.Instance;
+            return board.pieceOnField(field);
+        }
     }
 }

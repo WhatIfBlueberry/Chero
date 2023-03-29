@@ -40,25 +40,15 @@ namespace chero
                         // get white or black piece
                         isWhite = counter % 2 == 0;
 
-                        if (substring.StartsWith("O"))
+                        // Handles predefined moves like Castle
+                        if (substring.Equals("O-O") || substring.Equals("O-O-O"))
                         {
-                            if (isWhite)
-                            {
-                                ret.Add(new MoveAction(new WhiteRook(Field.H1), Field.F1, false, true));
-                                ret.Add(new MoveAction(new King(Field.E1), Field.G1, false, true));
-                                
-                            }
-                            else
-                            {
-                                ret.Add(new MoveAction(new BlackRook(Field.H8), Field.F8, false, false));
-                                ret.Add(new MoveAction(new King(Field.E8), Field.G8, false, false));
-                                
-                            }
+                            ret.Add(new MoveAction(substring, isWhite));   
                             counter++;
                             continue;
                         }
 
-                        // TODO future implementation for castle etc.
+                        // TODO future implementation for Checkmate etc.
                         if (substring.Contains("+") || substring.Contains("#") || substring.Contains("-")) {
                             ret.Add(new MoveAction(new UnknownPiece(Field.UNKNOWN), Field.UNKNOWN, false, false));
                             counter++;

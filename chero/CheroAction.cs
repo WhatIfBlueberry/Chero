@@ -10,13 +10,16 @@ namespace chero
 {
     internal class CheroAction
     {
-        private Chero chero;
+        protected Chero chero;
         private IChessPiece piece;
         private Field from;
         private Field target;
         private bool isWhite;
         public CheroAction(Chero chero, IChessPiece piece, Field from, Field target, bool isWhite)
         {
+            // chero could be made a Singleton
+            // piece and isWhite could be removed, they are currently just present for better debugging
+            // and a readable toString() method
             this.chero = chero;
             this.piece = piece;
             this.from = from;
