@@ -47,7 +47,7 @@ namespace chero
                 IChessPiece king = Helper.pieceOnField(Field.E8);
                 ret.Add(new CheroAction(chero, rook, Field.H8, Field.F8, false));
                 ret.Add(new CheroAction(chero, king, Field.E8, Field.G8, false));
-                rook.setField(Field.H8);
+                rook.setField(Field.F8);
                 king.setField(Field.G8);
             }
             return ret;

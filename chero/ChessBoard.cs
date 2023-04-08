@@ -68,7 +68,7 @@ namespace chero
             figures.Add(new King(Field.E8));
             figures.Add(new BlackBishop(Field.F8));
             figures.Add(new BlackKnight(Field.G8));
-            figures.Add(new BlackRook(Field.H1));
+            figures.Add(new BlackRook(Field.H8));
         }
 
         public HashSet<IChessPiece> getFigures()
