@@ -1,0 +1,19 @@
+[Event "Casual Correspondence game"]
+[Site "https://lichess.org/UesJo3Wu"]
+[Date "2023.04.13"]
+[White "lichess AI level 1"]
+[Black "Anonymous"]
+[Result "0-1"]
+[UTCDate "2023.04.13"]
+[UTCTime "14:16:10"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[Variant "Standard"]
+[TimeControl "-"]
+[ECO "C20"]
+[Opening "King's Pawn Game: Wayward Queen Attack, Kiddie Countergambit"]
+[Termination "Normal"]
+
+1. e4 e5 2. Qh5 Nf6 3. Qxe5+ Be7 4. Qc3 d5 5. e5 Ne4 6. Qd3 Nc6 7. Ne2 Nxe5 8. Qb5+ c6 9. d4 Ng6 10. Qc5 Bxc5 11. Nd2 Qf6 12. f3 Nxd2 13. c3 Bd6 14. Rg1 Qh4+ 15. g3 Qxh2 16. Kd1 Nxf3 17. Bh6 Bxg3 18. Bxg7 Rg8 19. Be5 Nfxe5 20. Nxg3 Bg4+ 21. Be2 Qxg1+ 22. Nf1 Qf2 23. Kc2 Qxe2+ 24. Kc1 Nd3+ 25. Kb1 Qd1# 0-1
+
+

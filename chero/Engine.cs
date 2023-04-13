@@ -26,10 +26,11 @@ namespace chero
             {
                 if (action.getTakes())
                 {
+                    IChessPiece targetPiece = Helper.pieceOnField(action.getTarget());
                     // if piece got taken, remove it from the board first
-                    ret.Add(new CheroAction(chero, new UnknownPiece(Field.UNKNOWN), action.getTarget(), Field.oob, false));
+                    ret.Add(new CheroAction(chero, targetPiece, action.getTarget(), Field.oob, false));
                     // get piece from board and let it know it got removed
-                    Helper.pieceOnField(action.getTarget()).setField(Field.oob);
+                    targetPiece.setField(Field.oob);
                 }
                 if (action.isRochade())
                 {
