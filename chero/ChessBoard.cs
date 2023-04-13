@@ -7,33 +7,18 @@ using System.Threading.Tasks;
 
 namespace chero
 {
-    public sealed class ChessBoard
+    internal class ChessBoard
     {
-        private static ChessBoard? instance = null;
-        private static readonly object padlock = new object();
         private HashSet<IChessPiece> figures = new HashSet<IChessPiece>();
 
         public ChessBoard() {
             initPieces();
         }
 
-        public static ChessBoard Instance
-        {
-            get
-            {
-                lock(padlock)
-                {
-                    if (instance == null)
-                    {
-                        instance = new ChessBoard();
-                    }
-                    return instance;
-                }
-            }
-        }
 
         private void initPieces()
         {
+            this.figures = new HashSet<IChessPiece>();
             // white pieces
             figures.Add(new WhitePawn(Field.A2));
             figures.Add(new WhitePawn(Field.B2));

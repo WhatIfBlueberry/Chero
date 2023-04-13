@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -10,6 +11,7 @@ namespace chero
 {
     static class Helper
     {
+        private static ChessBoard board = new ChessBoard();
 
         public static (int x, int y) parseInput(Field field)
         {
@@ -54,7 +56,6 @@ namespace chero
         public static HashSet<IChessPiece> getEquals(IChessPiece piece)
         {
             HashSet<IChessPiece> ret = new HashSet<IChessPiece>();
-            ChessBoard board = ChessBoard.Instance;
             var type = piece.GetType();
             HashSet<IChessPiece> pieces = board.getFigures();
             foreach (IChessPiece figure in pieces)
@@ -69,14 +70,17 @@ namespace chero
 
         public static bool occupied(Field field)
         {
-            ChessBoard board = ChessBoard.Instance;
             return board.occupied(field);
         }
 
         public static IChessPiece pieceOnField(Field field)
         {
-            ChessBoard board = ChessBoard.Instance;
             return board.pieceOnField(field);
+        }
+
+        public static void reset()
+        {
+            board = new ChessBoard();
         }
     }
 }
