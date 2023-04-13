@@ -31,12 +31,15 @@ namespace chero
                     // preperate string for further processing
                     string output = Regex.Replace(line, @"\d+\.\s*", string.Empty);
                     List<string> substrings = new List<string>(output.Split(' '));
+                    substrings.Remove(substrings.Last());
                     List<MoveAction> ret = new List<MoveAction>();
                     int counter = 0;
                     bool isWhite;
 
                     foreach (string substring in substrings)
                     {
+                        string substr = substring;
+
                         // get white or black piece
                         isWhite = counter % 2 == 0;
 
@@ -48,14 +51,15 @@ namespace chero
                             continue;
                         }
 
-                        // TODO future implementation for Checkmate etc.
-                        if (substring.Contains("+") || substring.Contains("#") || substring.Contains("-")) {
-                            ret.Add(new MoveAction(new UnknownPiece(Field.UNKNOWN), Field.UNKNOWN, false, false));
-                            counter++;
-                            continue;
+                        // deletes "+" and "#" from the substring because of unnecessary information
+                        if (substring.Contains("+") || substring.Contains("#"))
+                        {
+                            substr = substr.Replace("+", "");
+                            substr = substr.Replace("#", "");
                         }
+
                         // get target field
-                        string target = substring.Substring(substring.Length - 2);
+                        string target = substr.Substring(substr.Length - 2);
                         target = target.ToUpper();
                         Field targetField = Field.UNKNOWN;
                         bool isDefined = Enum.IsDefined(typeof(Field), target);
