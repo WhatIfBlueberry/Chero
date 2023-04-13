@@ -34,6 +34,7 @@ namespace chero
                 if (action.isRochade())
                 {
                     ret.AddRange(new PredefinedCheroAction(chero, action.getIsWhite()).getRochadeActions(action.getRochade()));
+                    continue;
                 }
                 ret.Add(moveToChero(action));
             }
