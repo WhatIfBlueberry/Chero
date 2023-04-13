@@ -11,14 +11,19 @@ namespace chero
 {
     internal static class InputParser
     {
-        public static List<MoveAction> parse()
+
+        public static string[] getInput()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() != DialogResult.OK)
             {
-                return new List<MoveAction>();
+                return new string[0];
             }
             string[] lines = File.ReadAllLines(openFileDialog.FileName);
+            return lines;
+        }
+        public static List<MoveAction> parse(string[] lines)
+        {
             bool shouldProcess = false;
             foreach (string line in lines)
             {
